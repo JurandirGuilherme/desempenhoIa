@@ -51,18 +51,18 @@ def create_aluno(aluno: Aluno):
         model = joblib.load(open('RNA_model.pkl', 'rb'))
         
         features = np.array([[
-        aluno.idade,
-        aluno.sexo,
-        aluno.etnia,
-        aluno.educacaoPais,
-        aluno.tempoEstudoSemanal,
-        aluno.faltas,
-        aluno.aulasParticulares,
-        aluno.apoioPais,
-        aluno.extraCurriculares,
-        aluno.esportes,
-        aluno.aulaMusica,
-        aluno.voluntariado,
+       int(aluno.idade),
+    int(aluno.sexo),
+    int(aluno.etnia),
+    int(aluno.educacaoPais),
+    int(aluno.tempoEstudoSemanal),
+    int(aluno.faltas),
+    int(aluno.aulasParticulares),
+    int(aluno.apoioPais),
+    int(aluno.extraCurriculares),
+    int(aluno.esportes),
+    int(aluno.aulaMusica),
+    int(aluno.voluntariado)
         ]])
         notaFinal = model.predict(features)
         mapeamento = {0: 'A', 1: 'B', 2:'C', 3:'D', 4:'F'}
